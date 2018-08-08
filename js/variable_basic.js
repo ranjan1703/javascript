@@ -79,8 +79,9 @@ function arithmaticOpration(){
 	Multiplication();
 	Division();
 	Modulus();
-	Increment();
-	Decrement();
+	IncrementPost();
+	DecrementPre();
+	PostPre();
 
 }
 
@@ -122,26 +123,137 @@ function Modulus(){
 	document.write("Modulus of x=100 and y=50 Is:  ");
 	document.write(z);
 }
-function Increment(){
+function IncrementPost(){
 	var x=100;
-	 x++;
+	 x++;        //postfix increment operator
 	document.write("<br>");
 	document.write("<hr>");
 	document.write("Increment of x=100 Is:  ");
 	document.write(x);
-}
-function Decrement(){
-	var x=100;
-	 x--;
 	document.write("<br>");
+	}
+
+	
+
+function DecrementPre(){
+	var x=100;
+	 --x;               //prefix decrement operator
 	document.write("<hr>");
 	document.write("Decrement of x=100 Is:  ");
 	document.write(x);
 }
 
 
+function PostPre(){
+	var a=10;
+	document.write("<hr>");
+	document.write("Postfix of a=10: ");
+	document.write(a++);
+
+	var a=10;
+	document.write("<br>");
+	document.write("Prefix of a=10: ");
+	document.write(++a);
+}
+
+/*
+Assignment Operators
+
+OPERATORS              EXAMPLE        SAME AS
+---------              -------       ---------
+
+=                       x=y
++=                      x+=y           x=x+y
+-=                      x-=y           x=x-y
+*=                      x*=y           x=x*y
+/=                      x/=y           x=x/y
+%=                      x%=y           x=x%y
+
+*/
+
+function AssignmentOperator(){
+equalAssOP();
+addAssigOp();
+subAssigOp();
+}
+
+function equalAssOP(){
+	var x= 10;
+	var y=100;
+	x=y;
+	document.write("Equal Assignment operator of x=10 and y=100 Is: ");
+	document.write(x);
+	document.write("<br>");
+	document.write("Value of y remain: ");
+	document.write(y);
+}
+
+function addAssigOp(){
+	var x=10;
+	x+=50;
+document.write("<hr>");
+document.write("Addition Assignment Operator result of x=10 and 'x+=50' Is: ");
+document.write(x);
+}
+function subAssigOp(){
+	var x=100;
+	x-=50;
+document.write("<hr>");
+document.write("Substration Assignment Operator result of x=100 and 'x-=50' Is: ");
+document.write(x);
+}
+/* Rest can be done is same way*/
 
 
+
+/*
+Concatenation Operator (+): string1 + " " +string2
+
+*/
+
+function concatenation(){
+concString();
+concNumStr();
+concNumStrAsNum();
+}
+
+function concString(){
+
+	var firstName="Ranjan";
+	var lastName="Singh";
+	var fullName=firstName + " " + lastName;
+	document.write("<hr>");
+	document.write("First name: ", firstName);
+	document.write("<br>");
+	document.write("Last name: ", lastName);
+	document.write("<br>");
+	document.write('Result of fullName = firstName + " " + lastName: ');
+	document.write(fullName);
+	document.write("<hr>");
+	
+}
+function concNumStr()
+{
+	var a="Hello";
+	var b=10;
+	var c= a + " " + b;
+	document.write('Result of c = a + " " + b where a = "hello" and b = 10: ');
+	document.write(c);
+
+
+
+}
+function concNumStrAsNum()
+{
+	var a="10";
+	var b=10;
+	var c= a + b;
+	document.write("<hr>");
+	document.write('Result of c = a + b where a = "10" and b = 10: ');
+	document.write(c);
+	document.write("<br>");
+	document.write("*Note that the return value will be string type is this case.");
+}
 
 
 
