@@ -213,6 +213,100 @@ function switchStmt(){
         default:
         document.write("No data found");
 	}
-
-
+	document.write("<br>");
 }
+
+/* LOOPS
+while
+do.....while
+for....
+*/
+
+function loops(){
+whileLoop();
+dowhileloop();
+forloop();
+evenOdd();
+breakstmt();
+contstmt();
+}
+
+function whileLoop(){
+//Purpose of the while loop is to execute the statment repeatedly until the condition becomes false.
+var x = 1;  
+document.write("This is the result of while loop <br>");  //here we have value 1 to x 
+while( x<=5){  //here we are saying that execute the statment until x become 5. so basiclly we are giving condition here.
+
+	document.write(x + "<br>");
+x++;    //here we are giving the logic or the opration to perfom..means increment the x until x reaches 5.
+	}
+	document.write("<hr>");
+}
+
+function dowhileloop(){
+
+var x=11;
+document.write("Result of do while <br>");
+do{
+	document.write(x +"<br>");
+	x++;
+}
+while(x<=10);
+/*here we can see that x value is 8 and condition is x<=10,
+which means increment the x value by 1 until x reaches 10 so output will be 8 9 10 */
+/* but when we give x=11 which dosnt satisfy the condition so in case of do-while do code execute first hence it will print 11 */
+document.write("<hr>");
+}
+
+
+function forloop(){
+	
+	for(var a=7; a<=10; a++){
+		document.write(a +"<br>");
+	}
+document.write("<hr>");
+}
+
+function evenOdd(){
+	document.write("Find Odd and even of number between 0-10.");
+	for (var a=0; a<=10; a++){
+
+if (a===0) {
+	document.write(a + " is even <br>");
+}
+		else if (a % 2 ===0) {
+			document.write(a+ " is even <br>");
+		}else{
+			document.write(a+ " is odd <br>");
+		}
+	}
+	document.write("<hr>");
+	}
+/*
+Break and Continue
+Break - break is used to halt the program execution and come out of block of code.
+Continue --it is used to continue the haltd program and again execute the block of code.
+
+*/
+function breakstmt(){
+	document.write("Result of break Statement");
+	for (var i = 0; i<=10; i++){
+		if(i==7){
+			break;
+		}
+		document.write(i +"<br>");
+	}
+	document.write("<hr>");
+}
+function contstmt(){
+	document.write("Result of continue Statement we can see 5 is missing <br>");
+	for (var i = 0; i<=10; i++){
+		if(i==5){
+			continue;
+		}
+		document.write(i +"<br>");
+	}
+}
+
+
+
