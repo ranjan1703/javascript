@@ -77,7 +77,7 @@ it run automatically when we create it.
 	document.write("self executing function alternative <br>");
 }());
 
-//passing arrgument to self executing function.
+//passing argument to self executing function.
 (function (x,y){
 	document.write("sum of x and y" +(x+y) + "<br>");
 })(18,20);
@@ -86,7 +86,7 @@ it run automatically when we create it.
 var sum=(function(x,y){
 	return x+y;
 })(10,20);
-document.write("sum of x and y= " + sum);
+document.write("sum of x and y= " + sum + "<br>");
 
 
 
@@ -96,3 +96,79 @@ document.write("sum of x and y= " + sum);
 -Local
 
 */
+var x=20; //global variable
+function scopeG(){
+	document.write("Global variable-Accessed inside of a function" + x + "<br>");
+
+}
+scopeG();
+document.write(" Global variable-Accessed outside of the function "+ x + "<br>");
+
+
+function scopeL(){
+	var y=10; //local variable
+	document.write("Local variable-Accessed inside of a function" + y + "<br>");
+}
+scopeL();
+//
+
+
+//making local variable global
+
+function scopeLtoG(){
+	 z=100; //local variable making global by removing var.
+	document.write("Local variable-Accessed inside of a function" + z + "<br>");
+}
+scopeLtoG();
+document.write("And local which is now act as global Accessed outside of a function" + z + "<br>");
+
+/*
+Age calculator
+*/
+function age(birthy){
+	var currenty=2018;
+	return (currenty - birthy);
+}
+var myage= age(1995);
+document.write("my age is " + myage + "<br>");
+
+/*
+Nested function 
+function inside function
+*/
+//scoping rule in nested function
+function outerfun(x,y){
+	var g=10;
+	function innerfun(){
+		var j=20;
+		document.write("value of g " + g + "<br>"); //able to access outer function variable in inner function.
+	   document.write("value of j " + j + "<br>"); //
+	document.write("value of x " + x + "<br>"); //able to access outer funtion parameter.
+	document.write("value of y " + y + "<br>");
+	}
+	innerfun();
+}
+outerfun(30,40);
+
+
+/*
+Dialog box in javascript
+
+alert- we already know
+confirm --
+*/
+/*var v = confirm("Do you want me to do action");
+if (v) {
+	document.write("ok great job");
+}
+else{
+	document.write("ummm ok no problem");
+}*/
+
+var age = prompt("Enter your age");
+if(age>=18){
+document.write("You can vote");
+}
+else{
+	document.write("you cant vote ..sorry!");
+}
